@@ -5,15 +5,15 @@ tags: ['dict', 'I/O', 'list slicing']
 
 # Problem Statement
 
-You need to process the license plate and return a list of dictionaries with keys as\
-1. `state`: (str) two letters which indicates the State or Union Territory in which the vehicle is registered.\
-2. `RTO code`: (int) a two-digit number allocated to a district RTO(s) within the respective state or Union Territory.\
-3. `series`: (str) 1 or 2 letter; show the ongoing registration series of respective RTO\
-4. `unique id` (int) between 1 and 9999; unique to each registration.\
+User inputs license-plates. Process these license-plates and return a list of dictionaries with keys as:
+1. `state`: (str) two letters which indicates the State or Union Territory in which the vehicle is registered.
+2. `RTO code`: (int) a two-digit number allocated to a district RTO(s) within the respective state or Union Territory.
+3. `series`: (str) 1 or 2 letter; show the ongoing registration series of respective RTO
+4. `unique id` (int) between 1 and 9999; unique to each registration.
 
-Assume that inputs have: 
-- 1st line of input is the number of inputs (by the user)
-- space between these 4 components `TN 12 L 2421`
+Input preconditions: 
+- 1st line of input is total number of license-plates
+- 2nd line onwards input license-plate in the format `TN 12 L 2421`. Press enter if multiple license-plates.
 
 # Solution
 ```python test.py  -r 'python test.py'
