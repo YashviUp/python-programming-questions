@@ -1,25 +1,27 @@
 ---
-title: Kaprekar's constant  
+title: Kaprekar's constant (6174)
 tags: ['I/O', 'while loop', 'sort', 'join']  
 ---
 
 # Problem Statement
-
-1. Take any **four-digit number**, using at least two different digits (*check for same for a given input*).
-2. Arrange the digits in **descending** and then in **ascending order** to get two four-digit numbers.
-3. **Subtract** the smaller number from the bigger number.
-4. Go back to **step 2** and repeat until you reach 6174 (Kaprekar's constant).
-5. Return the **number of steps (int) it took until the difference is 6174.**
+Find out: how many steps are required to arrive at 6174 (Kaprekar's constant).
+Follow the Method below:
+1. Input any **four-digit number**. Check for *4-digits input and at-least 2-digits are unique* 
+2. Find the **smallest & largest possible 4-digit number** which can be made from the given number.
+3. **Subtract** the smallest from the largest number. Note the difference number.
+4. Go-back to **step 2** and repeat until the difference becomes 6174.
+5. Calculate the **number of steps (int) required to reach 6174.**
 
 **Example:**
 ```
-1459 #3
+1459
+#output: 3
 ```
-largest - smallest =
+largest - smallest =\
 9541 – 1459 = 8082\
 8820 – 0288 = 8532\
 8532 – 2358 = 6174\
-Hence, it took 4 steps to reach 6174. (If the input was 6174, then 0 steps)\
+So, it took 3-steps to reach 6174. (If the input was 6174, then 0-steps required.)
 
 # Solution
 
@@ -42,7 +44,7 @@ def Kaprekar():
     <sol>
     steps=0
     if len(Num) != 4 or not Num.isdigit() or len(set(Num)) < 2:
-        return None  # Return None if invalid input (non-4 digits or all digits the same)
+        return None  # Return None if invalid input (not all 4 digits are the same)
     if int(Num) == 6174:
         return 0
     
