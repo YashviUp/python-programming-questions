@@ -5,12 +5,12 @@ tags: ['set', 'filtering']
 
 # Problem Statement
 
-Given a list, return a list of elements which are repeated in the input list.
+Given a list, return a list containing elements which are repeated, equal.
 
-**Example**
+**Example:**
 ```python
-input list -> [1, 2, 3, 2, 3, 3, 4, 5, 6, 5] #here 2,3,5 have repetitions
-output modified list -> [2, 3, 5]
+input list -> [1, 2, 3, 2, 3, 3, 4,"A","b","B","A"] #here 2,3,'A' have repetitions
+output list -> [2, 3, 'A']
 ```
 
 # Solution
@@ -94,7 +94,7 @@ is_equal(
     [7]
 )
 is_equal(
-    find_repeated_elements([1, 2, 'apple', 2, 'banana', 'apple']), 
+    find_repeated_elements([1, 2, 'apple', 2, 'banana', 'apple','bAnana']), 
     [2, 'apple']
 )
 is_equal(
