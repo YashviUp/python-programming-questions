@@ -50,7 +50,7 @@ if not check_for_loops(find_repeated_elements):
     is_equal(
         order_repr(find_repeated_elements([1, 2, 3, 2, 4, 5, 3, 6, 1])),
         order_repr([1, 2, 3])
-    )
+        )
 ```
 
 ## Output 1
@@ -65,8 +65,8 @@ if not check_for_loops(find_repeated_elements):
 if not check_for_loops(find_repeated_elements):
     is_equal(
         order_repr(find_repeated_elements(['apple', 'banana', 'apple', 'cherry', 'banana'])),
-        order_repr(['apple', 'banana'])
-    )
+        "['apple', 'banana']"
+        )        
 ```
 ## Output 2
 
@@ -81,7 +81,7 @@ if not check_for_loops(find_repeated_elements):
     is_equal(
         order_repr(find_repeated_elements([10, 20, 30, 40])),
         order_repr([])
-    )
+        )
 ```
 
 ## Output 3
@@ -99,15 +99,15 @@ if not check_for_loops(find_repeated_elements):
     is_equal(
         order_repr(find_repeated_elements([7, 7, 7, 7, 7])),
         order_repr([7])
-    )
+        )
     is_equal(
         order_repr(find_repeated_elements([1, 2, 'apple', 2, 'banana', 'apple', 'bAnana'])),
         order_repr([2, 'apple'])
-    )
+        )
     is_equal(
         order_repr(find_repeated_elements([])),
         order_repr([])
-    )
+        )
 ```
 
 ## Output 1
