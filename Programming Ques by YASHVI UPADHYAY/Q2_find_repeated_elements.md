@@ -5,7 +5,7 @@ tags: ['set', 'filtering','lambda','data-processing']
 
 # Problem Statement
 
-Given a list, return a str list containing elements **which are repeated**. (case, type sensistive ==, ascending order)
+Given a list of any type, return a str list containing elements **which are repeated**. (case, type sensistive ==, ascending order)
 
 **Example:**
 ```python
