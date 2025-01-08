@@ -7,7 +7,7 @@ tags: ['I/O', 'while loop', 'sort', 'join']
 Find out: how many steps are required to arrive at 6174 (Kaprekar's constant).
 Follow the Method below:
 1. Input any **four-digit number**. Check for *4-digits input and at-least 2-digits are unique* 
-2. Find the **smallest & largest possible 4-digit number** which can be made from the given number.
+2. Sort the digits to form the **largest** and **smallest** possible 4-digit numbers which can be made from the given number.
 3. **Subtract** the smallest from the largest number. Note the difference number.
 4. Go-back to **step 2** and repeat until the difference becomes 6174.
 5. Calculate the **number of steps (int) required to reach 6174.**
