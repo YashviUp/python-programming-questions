@@ -70,6 +70,40 @@ def modify_check(func, in_obj, expected, should_modify=True):
         )
         order_print(actual_out)    
 
+import ast
+import inspect
+
+def check_for_loops(func):
+    """Check if the given function contains any 'for' loops, ignoring the docstring."""
+    try:
+        # Get the source code of the function as a string
+        source_code = inspect.getsource(func)
+        
+        # Remove the docstring part if it exists
+        lines = source_code.splitlines()
+        if lines[0].strip().startswith('"""') or lines[0].strip().startswith("'''"):
+            # If the function has a docstring, remove it from the source code
+            docstring_end_index = lines.index('"""') + 1 if lines[0].strip().startswith('"""') else lines.index("'''") + 1
+            lines = lines[docstring_end_index:]
+        
+        # Join the lines back to form the cleaned source code (with the docstring removed)
+        cleaned_source_code = "\n".join(lines)
+        
+        # Parse the cleaned source code into an AST
+        tree = ast.parse(cleaned_source_code)
+        
+        # Traverse the AST and look for for-loops
+        for node in ast.walk(tree):
+            if isinstance(node, ast.For):
+                print(f"Found a 'for' loop in the function {func.__name__}.")
+                return True
+        
+        return False
+    except Exception as e:
+        print(f"Error while checking 'for' loops: {e}")
+        return False
+
+
 import sys
 exec(sys.stdin.read())
 
