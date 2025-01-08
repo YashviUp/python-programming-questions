@@ -70,37 +70,46 @@ def modify_check(func, in_obj, expected, should_modify=True):
         )
         order_print(actual_out)    
 
-import ast
 import inspect
+import ast
 
 def check_for_loops(func):
-    """Check if the given function contains any 'for' loops, ignoring the docstring."""
+    """Check if the given function contains any 'for' or 'while' loops, ignoring the docstring."""
     try:
-        # Get the source code of the function as a string
+        # Get the source code of the function
         source_code = inspect.getsource(func)
         
         # Remove the docstring part if it exists
-        lines = source_code.splitlines()
-        if lines[0].strip().startswith('"""') or lines[0].strip().startswith("'''"):
-            # If the function has a docstring, remove it from the source code
-            docstring_end_index = lines.index('"""') + 1 if lines[0].strip().startswith('"""') else lines.index("'''") + 1
-            lines = lines[docstring_end_index:]
-        
-        # Join the lines back to form the cleaned source code (with the docstring removed)
-        cleaned_source_code = "\n".join(lines)
-        
+        if '"""' in source_code or "'''" in source_code:
+            # Handling the docstring removal
+            start_idx = source_code.find('"""')
+            end_idx = source_code.find('"""', start_idx + 3)
+            if start_idx != -1 and end_idx != -1:
+                source_code = source_code[:start_idx] + source_code[end_idx + 3:]
+            else:
+                start_idx = source_code.find("'''")
+                end_idx = source_code.find("'''", start_idx + 3)
+                if start_idx != -1 and end_idx != -1:
+                    source_code = source_code[:start_idx] + source_code[end_idx + 3:]
+
+        # Normalize indentation to spaces (4 spaces)
+        source_code = source_code.replace("\t", "    ")
+
+        # Strip any leading/trailing whitespace that might affect parsing
+        source_code = source_code.strip()
+
         # Parse the cleaned source code into an AST
-        tree = ast.parse(cleaned_source_code)
+        tree = ast.parse(source_code)
         
-        # Traverse the AST and look for for-loops
+        # Check for any 'for' or 'while' loops
         for node in ast.walk(tree):
-            if isinstance(node, ast.For):
-                print(f"Found a 'for' loop in the function {func.__name__}.")
+            if isinstance(node, (ast.For, ast.While)):
+                print(f"Found a loop (for/while) in the function {func.__name__}.")
                 return True
         
         return False
     except Exception as e:
-        print(f"Error while checking 'for' loops: {e}")
+        print(f"Error while checking loops: {e}")
         return False
 
 
