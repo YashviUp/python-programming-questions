@@ -104,7 +104,7 @@ def check_for_loops(func):
         # Check for any 'for' or 'while' loops
         for node in ast.walk(tree):
             if isinstance(node, (ast.For, ast.While)):
-                print(f"Found a loop (for/while) in the function {func.__name__}.")
+                print(f"Use of a loop (for/while) in the function {func.__name__} is not allowed.")
                 return True
         
         return False
