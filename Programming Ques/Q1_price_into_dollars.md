@@ -7,8 +7,8 @@ tags: ['formatted-string', 'index', 'data-type']
 
 Given a list of prices of items in ruppes (1 dollar = 85 rupees), **modify in place the price to dollars and cents(1 dollar = 100 cents)** for the item *at the given index* (don't modify other indices). If the index is out of range, return **None**.
 Assume the `price_list` is list of valid **integers**.\
-String output has no decimal points (as the remaining rupees is written as cents)
-**Don't use any loops**
+String output has no decimal points (as the remaining rupees is written as cents)\
+**Don't use any loops**\
 **Example:**
 ```python
 PriceList = [4000, 7000]
@@ -26,12 +26,13 @@ Second case: at index=1 is `841` i.e. `9 dollars 89 cents` (85 rupees -> 1 dolla
 def get_price_in_dollars(price_list: list, index: int) -> str:
     <sol>
     if 0 <= index < len(price_list):
-        price_list[index] = f"{price_list[index]//85} dollars {price_list[index]%85 *100//85} cents"
+        rs = int(price_list[index])
+        price_list[index] = f"{rs // 85} dollars {(rs%85) *100 // 85} cents"
     return None
     </sol>
 </template>
 <suffix_invisible>
-{% include '../is_equal_forloop_modify_check_suffix.py.jinja' %}
+{% include '../is_equal_loops_modify_check_suffix.py.jinja' %}
 </suffix_invisible>
 ```
 
