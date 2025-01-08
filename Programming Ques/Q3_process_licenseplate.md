@@ -5,7 +5,7 @@ tags: ['dict', 'I/O', 'list slicing']
 
 # Problem Statement
 
-User inputs license-plates. Process these license-plates and return a list of dictionaries with keys as:
+User inputs license-plates. Process these license-plates and **print a list of dictionaries*** with keys as:
 1. `state`: (str) two letters which indicates the State or Union Territory in which the vehicle is registered.
 2. `RTO code`: (int) a two-digit number allocated to a district RTO(s) within the respective state or Union Territory.
 3. `series`: (str) 1 or 2 letter; show the ongoing registration series of respective RTO
