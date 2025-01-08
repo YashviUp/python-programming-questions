@@ -5,7 +5,7 @@ tags: ['set', 'filtering','lambda','data-processing']
 
 # Problem Statement
 
-Given a list of any type, return a str list containing elements **which are repeated**. (case, type sensistive ==, ascending order)
+Given a list of any type, return a **sorted** list containing elements **which are repeated**. (case, type sensistive ==)
 
 **Example:**
 ```python
@@ -22,10 +22,10 @@ def find_repeated_elements(data: list) -> list:
     '''
     Find elements that are repeated in the input list.
     Argument:
-    - data: List of items (any type)
+    - data: List of items (Hint: mixed type need type conversion to sort)
 
     Return:
-    - A list of repeated elements (strings of ascending order)
+    - A list of repeated elements (ascending order)
     '''
     <los>return ...</los>
     <sol>
