@@ -13,6 +13,7 @@ input list -> [1, 2, 3, 2, 3, 3, 4,'A','b','B','A'] #here 2,3,'A' have repetitio
 output list -> [2, 3, 'A']
 ```
 **Don't use loops. Use functional programming like lambda/map etc...**
+
 # Solution
 
 ```python test.py  -r 'python test.py'
