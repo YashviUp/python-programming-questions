@@ -1,11 +1,11 @@
 ---
 title: Process License Plate into state, RTO code, series, unique id
-tags: ['dict', 'I/O', 'list slicing']
+tags: ['dict', 'I/O', 'list slicing','loop','multiple inputs']
 ---
 
 # Problem Statement
 
-User inputs license-plates. Process these license-plates and **print a list of dictionaries*** with keys as:
+User inputs license-plates. Process these license-plates and **print a list of dictionaries** with keys as:
 1. `state`: (str) two letters which indicates the State or Union Territory in which the vehicle is registered.
 2. `RTO code`: (int) a two-digit number allocated to a district RTO(s) within the respective state or Union Territory.
 3. `series`: (str) 1 or 2 letter; show the ongoing registration series of respective RTO
@@ -17,7 +17,6 @@ Input preconditions:
 
 # Solution
 ```python test.py  -r 'python test.py'
-<sol>
 <prefix>
 num = int(input()) 
 license_plates = []
@@ -25,6 +24,7 @@ for _ in range(num):
     license_plates.append(input().strip())
 </prefix>
 <template>
+<sol>
 outlist = []
 for license_plate in license_plates:
     parts = license_plate.split()
@@ -38,6 +38,7 @@ for license_plate in license_plates:
     outlist.append(license_dict)
 print(outlist)
 </sol>
+<los>print()</los>
 </template>
 ```
 
@@ -56,7 +57,7 @@ DL 09 X 1023
 
 ## Output 1
 
-```
+```python
 [{'state': 'MH', 'RTO code': 12, 'series': 'L', 'unique id': 2039}, {'state': 'MH', 'RTO code': 12, 'series': 'LQ', 'unique id': 2930}, {'state': 'KA', 'RTO code': 13, 'series': 'ZJ', 'unique id': 4567}, {'state': 'TN', 'RTO code': 8, 'series': 'B', 'unique id': 7890}, {'state': 'DL', 'RTO code': 9, 'series': 'X', 'unique id': 1023}]
 ```
 
@@ -71,7 +72,7 @@ TN 03 PQ 9999
 
 ## Output 2
 
-```
+```python
 [{'state': 'KA', 'RTO code': 10, 'series': 'AB', 'unique id': 1234}, {'state': 'MH', 'RTO code': 5, 'series': 'XY', 'unique id': 5678}, {'state': 'TN', 'RTO code': 3, 'series': 'PQ', 'unique id': 9999}]
 ```
 
@@ -86,6 +87,6 @@ TN 03 PQ 9999
 
 ## Output 1
 
-```
+```python
 []
 ```
