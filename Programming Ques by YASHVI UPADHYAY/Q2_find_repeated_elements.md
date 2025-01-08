@@ -1,18 +1,18 @@
 ---
 title: Find Repeated Elements
-tags: ['set', 'filtering','lambda']
+tags: ['set', 'filtering','lambda','data-processing']
 ---
 
 # Problem Statement
 
-Given a list, return a list containing elements which are repeated, equal. (case, type sensistive)
+Given a list, return a list containing elements **which are repeated**. (case, type sensistive ==)
 
 **Example:**
 ```python
-input list -> [1, 2, 3, 2, 3, 3, 4,'A','b','B','A'] #here 2,3,'A' have repetitions
-output list -> [2, 3, 'A']
+input list -> [1, 2, 3, '2', 3, 3, 4,'A','b','B','A'] #here 3,'A' have repetitions
+output list -> [3, 'A']
 ```
-**Don't use loops. Use functional programming like lambda/map etc...**
+**Refrain from for/while loops. Use functional programming like lambda/mapping etc...**
 
 # Solution
 
@@ -21,11 +21,12 @@ output list -> [2, 3, 'A']
 def find_repeated_elements(data: list) -> list:
     '''
     Find elements that are repeated in the input list.
-    Parameters:
+    Argument:
     - data: List of items (any type)
 
-    Returns:
-    - A list of repeated elements (in order of first occurrence)'''
+    Return:
+    - A list of repeated elements (in order of first occurrence)
+    '''
     <los>return ...</los>
     <sol>
     seen = set()
