@@ -5,7 +5,7 @@ tags: ['set', 'filtering','lambda','data-processing']
 
 # Problem Statement
 
-Given a list, return a list containing elements **which are repeated**. (case, type sensistive ==)
+Given a list, return a str list containing elements **which are repeated**. (case, type sensistive ==, ascending order)
 
 **Example:**
 ```python
@@ -25,15 +25,13 @@ def find_repeated_elements(data: list) -> list:
     - data: List of items (any type)
 
     Return:
-    - A list of repeated elements (order does not matter)
+    - A list of repeated elements (strings of ascending order)
     '''
     <los>return ...</los>
     <sol>
-    return list(
-        filter(
-            lambda x: data.count(x) > 1, set(data)
-        )
-    )
+    repeated = list(filter(lambda item: data.count(item) > 1, set(data)))
+    repeated.sort(key=lambda x: (str(x), x))    
+    return repeated
     </sol>
 </template>
 <suffix_invisible>
@@ -65,7 +63,7 @@ if not check_for_loops(find_repeated_elements):
 if not check_for_loops(find_repeated_elements):
     is_equal(
         order_repr(find_repeated_elements(['apple', 'banana', 'apple', 'cherry', 'banana'])),
-        "['apple', 'banana']"
+        order_repr(['apple', 'banana'])
         )        
 ```
 ## Output 2
