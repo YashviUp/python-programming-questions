@@ -5,11 +5,11 @@ tags: ['set', 'filtering']
 
 # Problem Statement
 
-Given a list, return a list containing elements which are repeated, equal.
+Given a list, return a list containing elements which are repeated, equal. (case, type sensistive)
 
 **Example:**
 ```python
-input list -> [1, 2, 3, 2, 3, 3, 4,"A","b","B","A"] #here 2,3,'A' have repetitions
+input list -> [1, 2, 3, 2, 3, 3, 4,'A','b','B','A'] #here 2,3,'A' have repetitions
 output list -> [2, 3, 'A']
 ```
 
