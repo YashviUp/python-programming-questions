@@ -46,7 +46,7 @@ def get_price_in_dollars(price_list: list, index: int) -> str:
 
 ## Input 1
 
-```python
+```
 PriceList = [1201, 2500, 7502, 4080]
 if not check_for_loops(get_price_in_dollars):
     modify_check(
@@ -62,7 +62,7 @@ if not check_for_loops(get_price_in_dollars):
 
 ## Input 2
 
-```python
+```
 PriceList = [1500, 5000, 999]
 if not check_for_loops(get_price_in_dollars):
     modify_check(
@@ -78,7 +78,7 @@ if not check_for_loops(get_price_in_dollars):
 
 ## Input 3
 
-```python
+```
 PriceList = [450, 1050, 2300]
 if not check_for_loops(get_price_in_dollars):
     modify_check(
@@ -94,7 +94,7 @@ if not check_for_loops(get_price_in_dollars):
 
 ## Input 4
 
-```python
+```
 PriceList = [1500, 5000, 999]
 if not check_for_loops(get_price_in_dollars):
     modify_check(
@@ -110,7 +110,7 @@ if not check_for_loops(get_price_in_dollars):
 
 ## Input 5
 
-```python
+```
 PriceList = [450, 1050, 2300]
 if not check_for_loops(get_price_in_dollars):
     modify_check(
@@ -129,7 +129,7 @@ None
 
 ## Input 1 (out of range index)
 
-```python
+```
 PriceList = [450, 1050, 2300]
 if not check_for_loops(get_price_in_dollars): #if for loop found prints "Found a 'for' loop in the function {func.__name__}.")
     modify_check(
@@ -145,7 +145,7 @@ None
 
 ## Input 2 (empty list)
 
-```python
+```
 if not check_for_loops(get_price_in_dollars):
     modify_check(
         lambda x: get_price_in_dollars(x, 0),
@@ -163,7 +163,7 @@ None
 
 ## Input 3 (1 item list)
 
-```python
+```
 PriceList = [905]
 if not check_for_loops(get_price_in_dollars):
     modify_check(
@@ -179,7 +179,7 @@ if not check_for_loops(get_price_in_dollars):
 
 ## Input 4 (1 item list)
 
-```python
+```
 PriceList = [2501]
 if not check_for_loops(get_price_in_dollars):
     modify_check(
@@ -195,7 +195,7 @@ if not check_for_loops(get_price_in_dollars):
 
 ## Input 5 (out of range index)
 
-```python
+```
 PriceList = [1200, 3400]
 if not check_for_loops(get_price_in_dollars):
     modify_check(
