@@ -12,8 +12,8 @@ User inputs license-plates. Process these license-plates and **print a list of d
 4. `unique id` (int) between 1 and 9999; unique to each registration.
 
 Input preconditions: 
-- 1st line of input is total number of license-plates
-- 2nd line onwards input license-plate in the format `TN 12 L 2421`. Press enter if multiple license-plates.
+- 1st: number of lines of input (no. of license-plates inputted)
+- 2nd line onwards license-plate in the format `TN 12 L 2421`. Press enter if multiple license-plates.
 
 # Solution
 ```python test.py  -r 'python test.py'
