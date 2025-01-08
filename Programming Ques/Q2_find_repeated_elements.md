@@ -1,6 +1,6 @@
 ---
 title: Find Repeated Elements
-tags: ['set', 'filtering']
+tags: ['set', 'filtering','lambda']
 ---
 
 # Problem Statement
@@ -12,7 +12,7 @@ Given a list, return a list containing elements which are repeated, equal. (case
 input list -> [1, 2, 3, 2, 3, 3, 4,'A','b','B','A'] #here 2,3,'A' have repetitions
 output list -> [2, 3, 'A']
 ```
-
+**Don't use loops. Use functional programming like lambda/map etc...**
 # Solution
 
 ```python test.py  -r 'python test.py'
@@ -37,7 +37,7 @@ def find_repeated_elements(data: list) -> list:
     </sol>
 </template>
 <suffix_invisible>
-{% include '../function_type_and_modify_check_suffix.py.jinja' %}
+{% include '../is_equal_loops_modify_check_suffix.py.jinja' %}
 </suffix_invisible>
 ```
 
@@ -46,9 +46,10 @@ def find_repeated_elements(data: list) -> list:
 ## Input 1
 
 ```
-is_equal(
-    find_repeated_elements([1, 2, 3, 2, 4, 5, 3, 6, 1]), [1, 2, 3]
-    )
+if not check_for_loops(find_repeated_elements):
+    is_equal(
+        find_repeated_elements([1, 2, 3, 2, 4, 5, 3, 6, 1]), [1, 2, 3]
+        )
 ```
 
 ## Output 1
@@ -60,9 +61,10 @@ is_equal(
 ## Input 2
 
 ```
-is_equal(
-    find_repeated_elements(['apple', 'banana', 'apple', 'cherry', 'banana']), ['apple', 'banana']
-    )
+if not check_for_loops(find_repeated_elements):
+    is_equal(
+        find_repeated_elements(['apple', 'banana', 'apple', 'cherry', 'banana']), ['apple', 'banana']
+        )
 ```
 ## Output 2
 
@@ -73,9 +75,10 @@ is_equal(
 ## Input 3
 
 ```
-is_equal(
-    find_repeated_elements([10, 20, 30, 40]), []
-    )
+if not check_for_loops(find_repeated_elements):
+    is_equal(
+        find_repeated_elements([10, 20, 30, 40]), []
+        )
 ```
 
 ## Output 3
@@ -89,18 +92,19 @@ is_equal(
 ## Input 1
 
 ```
-is_equal(
-    find_repeated_elements([7, 7, 7, 7, 7]),
-    [7]
-)
-is_equal(
-    find_repeated_elements([1, 2, 'apple', 2, 'banana', 'apple','bAnana']), 
-    [2, 'apple']
-)
-is_equal(
-    find_repeated_elements([]), 
-    []
-)
+if not check_for_loops(find_repeated_elements):
+    is_equal(
+        find_repeated_elements([7, 7, 7, 7, 7]),
+        [7]
+    )
+    is_equal(
+        find_repeated_elements([1, 2, 'apple', 2, 'banana', 'apple','bAnana']), 
+        [2, 'apple']
+    )
+    is_equal(
+        find_repeated_elements([]), 
+        []
+    )
 ```
 
 ## Output 1
