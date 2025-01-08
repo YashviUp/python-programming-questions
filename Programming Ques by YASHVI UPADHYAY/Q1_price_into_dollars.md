@@ -5,15 +5,20 @@ tags: ['formatted-string', 'index', 'data-type']
 
 # Problem Statement
 
-Given a list of prices of items in ruppes (1 dollar = 85 rupees), **modify in place the price to dollars and cents(1 dollar = 100 cents)** for the item *at the given index* (don't modify other indices). If the index is out of range, return **None**.
-Assume the `price_list` is list of valid **integers**.\
-String output has no decimal points (as the remaining rupees is written as cents)\
-**Don't use any loops**\
+Given a list of prices of items in rupees and an index, **modify that index element in place into price in dollars and cents** (don't modify other indices).\
+**1 dollar = 85 rupees\
+1 dollar = 100 cents**
+
+- If the `index` is out of range, return **None**.
+- Assume the `price_list` is list of valid **integers**.
+- String output has no decimal points (as the remaining rupees is written as cents)
+- **Refrain from using for/while loops**
+
 **Example:**
 ```python
 PriceList = [4000, 7000]
 get_price_in_dollars(PriceList, 1) # list modified [4000, '82 dollars 35 cents']
-get_price_in_dollars([142, 841, 7621, 2221],1) #list modified [142, '9 dollars 89 cents',7621,1)
+get_price_in_dollars([142, 841, 7621, 2221],1) #list modified [142, '9 dollars 89 cents', 7621, 2221]
 ```
 First case: 7000 rupeess -> 82 dollars 35 cents\
 Second case: at index=1 is `841` i.e. `9 dollars 89 cents` (85 rupees -> 1 dollar & 1 dollar -> 100 cents)
@@ -24,6 +29,7 @@ Second case: at index=1 is `841` i.e. `9 dollars 89 cents` (85 rupees -> 1 dolla
 ```python test.py -r 'python test.py'
 <template>
 def get_price_in_dollars(price_list: list, index: int) -> str:
+<los>...</los>
     <sol>
     if 0 <= index < len(price_list):
         rs = int(price_list[index])
