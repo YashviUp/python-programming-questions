@@ -5,12 +5,12 @@ tags: ['set', 'filtering','lambda','data-processing']
 
 # Problem Statement
 
-Given a list of any type, return a **sorted** list containing elements **which are repeated**. (case, type sensistive ==)
+Given a list of any type, return a set containing elements **which are repeated**. (case, type sensistive ==)
 
 **Example:**
 ```python
 input list -> [1, 2, 3, '2', 3, 3, 4,'A','b','B','A'] #here 3,'A' have repetitions
-output list -> [3, 'A']
+output list -> {3, 'A'}
 ```
 **Refrain from for/while loops. Use functional programming like lambda/mapping etc...**
 
@@ -22,16 +22,14 @@ def find_repeated_elements(data: list) -> list:
     '''
     Find elements that are repeated in the input list.
     Argument:
-    - data: List of items (Hint: mixed type need type conversion to sort)
+    - data: List of items
 
     Return:
-    - A list of repeated elements (ascending order)
+    - A set of repeated elements (order does not matter)
     '''
     <los>return ...</los>
     <sol>
-    repeated = list(filter(lambda item: data.count(item) > 1, set(data)))
-    repeated.sort(key=lambda x: (str(x), x))    
-    return repeated
+    return set(filter(lambda x: data.count(x) > 1, set(data)))
     </sol>
 </template>
 <suffix_invisible>
@@ -46,15 +44,15 @@ def find_repeated_elements(data: list) -> list:
 ```
 if not check_for_loops(find_repeated_elements):
     is_equal(
-        order_repr(find_repeated_elements([1, 2, 3, 2, 4, 5, 3, 6, 1])),
-        order_repr([1, 2, 3])
+        (find_repeated_elements([1, 2, 3, 2, 4, 5, 3, 6, 1])),
+        ({1, 2, 3})
         )
 ```
 
 ## Output 1
 
 ```
-'[1, 2, 3]'
+{1, 2, 3}
 ```
 
 ## Input 2
@@ -62,14 +60,14 @@ if not check_for_loops(find_repeated_elements):
 ```
 if not check_for_loops(find_repeated_elements):
     is_equal(
-        order_repr(find_repeated_elements(['apple', 'banana', 'apple', 'cherry', 'banana'])),
-        order_repr(['apple', 'banana'])
+        find_repeated_elements(['apple', 'banana', 'apple', 'cherry', 'banana']),
+        {'apple', 'banana'}
         )        
 ```
 ## Output 2
 
 ```
-"['apple', 'banana']"
+{'apple', 'banana'}
 ```
 
 ## Input 3
@@ -77,15 +75,15 @@ if not check_for_loops(find_repeated_elements):
 ```
 if not check_for_loops(find_repeated_elements):
     is_equal(
-        order_repr(find_repeated_elements([10, 20, 30, 40])),
-        order_repr([])
+        find_repeated_elements([10, 20, 30, 40]),
+        set()
         )
 ```
 
 ## Output 3
 
 ```
-'[]'
+{}
 ```
 
 # Private Test Cases
@@ -95,23 +93,23 @@ if not check_for_loops(find_repeated_elements):
 ```
 if not check_for_loops(find_repeated_elements):
     is_equal(
-        order_repr(find_repeated_elements([7, 7, 7, 7, 7])),
-        order_repr([7])
+        find_repeated_elements([7, 7, 7, 7, 7]),
+        {7}
         )
     is_equal(
-        order_repr(find_repeated_elements([1, 2, 'apple', 2, 'banana', 'apple', 'bAnana'])),
-        order_repr([2, 'apple'])
+        find_repeated_elements([1, 2, 'apple', 2, 'banana', 'apple', 'bAnana']),
+        {2, 'apple'}
         )
     is_equal(
-        order_repr(find_repeated_elements([])),
-        order_repr([])
+        find_repeated_elements([]),
+        set()
         )
 ```
 
 ## Output 1
 
 ```
-'[7]'
-"[2, 'apple']"
-'[]'
+{7}
+{'apple', 2}
+{}
 ```
